@@ -1,2 +1,2 @@
-1|dsa
-2|computer networks
+S100|dsa
+S101|computer networks

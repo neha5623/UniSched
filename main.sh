@@ -8,7 +8,11 @@ do
     	echo "2. View Faculty"
     	echo "3. Add Subject"
     	echo "4. View Subjects"
-    	echo "5. Exit"
+	echo "5. Add Room"
+	echo "6. View Rooms"
+	echo "7. Add Timeslot"
+	echo "8. View Timeslots"
+    	echo "9. Exit"
     	echo "================================="
 	read -p "Enter choice: " choice
 	case $choice in 
@@ -33,7 +37,30 @@ do
 			cat data/subjects.txt
 			;;
 		5)
-			echo "Exiting"
+			read -p "Enter room id: " rid
+			read -p "Enter room name: " rname
+			read -p "Enter room capacity: " rcap
+			echo "$rid|$rname|$rcap" >> data/rooms.txt
+			echo "Room added succesfuly"
+			;;
+		6)
+			echo "Rooms List"
+			cat data/rooms.txt
+			;;
+		7)
+			read -p "Enter Slot id: " tid
+			read -p "Enter day: " day
+			read -p "Enter start time: " start
+			read -p "Enter end time: " end
+			echo "$tid|$day|$start|$end" >> data/slots.txt
+			echo "slot added successfully"
+			;;
+		8)
+			echo "Slots List"
+			cat data/slots.txt
+			;;
+		9)
+			echo "Exiting..."
 			;;
 		*)
 			echo "Invalid choice"
@@ -43,3 +70,4 @@ do
 	read -p "Press Enter to continue.."
 	clear 
 done
+====
